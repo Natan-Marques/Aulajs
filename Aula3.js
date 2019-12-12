@@ -12,11 +12,19 @@ const contador = (idade) => {
 
 // 15 é a prova do iF, são 6 vagas pra ADS e 20 alunos irão fazer a prova. hoje é 11
 
-const diasRestantes = (day) => {
+const diasQueFaltamParaProva = (dia) => {
+    for(let i = dia; i <= 15; i++){
+        let result = 15 - i
 
-    for(let i = day; i <= 15; i++){
-        console.log(`Faltam ${i} dias para a sua prova`)
+        if(result != 0){
+            console.log(`Faltam ${result} dias para a prova!`)
+            
+            result++
+        }
+        else{
+            console.log('O dia chegou!')
+        }
     }
 }
 
-diasRestantes(11)
+diasQueFaltamParaProva(11)
