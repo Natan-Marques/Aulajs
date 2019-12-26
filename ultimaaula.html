@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+   <h2>Sorteador de números de Rifas</h2>
+    <p>Digite as rifas vendidas</p>
+<input type="text" nome="" id="rifas">
+
+<p>Digite o seu Número</p>
+<input type="text" nome="" id="numero">
+
+<button onclick="gerar()">Gerar</button>
+
+<h2 id="render"></h2>
+<h2 id="win"></h2>
+
+<script>
+    function gerar() {
+const rifas = document.getElementById("rifas").value
+const numero = document.getElementById("numero").value
+
+const randomnumber = geradorDeNumerosRandomicos(rifas)
+
+
+document.getElementById("render").innerHTML= `Número aleatório é ${randomnumber}`
+
+if (randomnumber == numero) {
+    document.getElementById("win").innerHTML= "Parabéns"
+}
+else {
+    document.getElementById("win").innerHTML= "Você é um perdedor, que pena"
+}
+
+}
+
+
+
+
+
+
+
+   function geradorDeNumerosRandomicos(input){
+            return Math.round(Math.random() * input)
+        }
+        
+
+    
+</script>
+
+
+
+</body>
+</html>
